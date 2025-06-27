@@ -1,10 +1,10 @@
 # Multiple Vulnerabilities in College ERP System (Redacted) – Responsible Disclosure
 
-## 👨‍💻 Author
+## Author
 **Sarbagya Ratna Maharjan**  
 Cybersecurity Enthusiast
 
-## 🗃️ Overview
+## Overview
 
 Between May and June 2025, I discovered and responsibly disclosed **four different vulnerabilities** in a college's ERP system, some of which exposed highly sensitive data of students and staff. All issues were reported and patched. These include broken access controls, document leaks, privilege escalation.
 
@@ -41,7 +41,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Restrict access to admin panels with strong role validation
   - Enforce authentication for all sensitive endpoints
 
-#### 🔎 Screenshot (Redacted)
+#### Screenshot (Redacted)
 ![Super Admin Panel Access](screenshots/1.png)
 ![Super Admin Panel Access](screenshots/2.png)
 ![Super Admin Panel Access](screenshots/3.png)
@@ -64,7 +64,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Apply access control checks based on user roles and IDs  
   - Isolate document access by user/session context  
   - Restrict SMS interface ac  cess to authorized personnel only
-
+#### Screenshot (Redacted)
  ![Super Admin Panel Access](screenshots/4.png)
 ![Super Admin Panel Access](screenshots/5.png)
   
@@ -83,7 +83,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
 
   - Implement access validation on all report exports
   - Use session-bound or signed URLs with authorization middleware
-
+#### Screenshot (Redacted)
 ![Super Admin Panel Access](screenshots/6.png)
 
 
