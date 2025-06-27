@@ -43,6 +43,8 @@ This write-up summarizes each finding with redacted and anonymized technical det
 
 #### 🔎 Screenshot (Redacted)
 ![Super Admin Panel Access](screenshots/1.png)
+![Super Admin Panel Access](screenshots/2.png)
+![Super Admin Panel Access](screenshots/3.png)
 
 ### 2. Student Document Leak + SMS Messaging Interface Access
 
