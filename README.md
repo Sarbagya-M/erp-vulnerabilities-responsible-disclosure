@@ -33,9 +33,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
 - **Impact:**
 
   - Full access to user account management
-
   - Ability to manipulate user roles
-
   - Unrestricted access to administrative control panels
 
 - Fix Recommendation:
