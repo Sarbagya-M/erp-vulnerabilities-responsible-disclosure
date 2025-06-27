@@ -41,6 +41,8 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Restrict access to admin panels with strong role validation
   - Enforce authentication for all sensitive endpoints
 
+#### 🔎 Screenshot (Redacted)
+![Super Admin Panel Access](screenshots/1_superadmin_panel_redacted.png)
 
 ### 2. Student Document Leak + SMS Messaging Interface Access
 
