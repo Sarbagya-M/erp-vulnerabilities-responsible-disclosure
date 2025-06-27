@@ -41,8 +41,10 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Restrict access to admin panels with strong role validation
   - Enforce authentication for all sensitive endpoints
 
-
-### 2⃣ Student Document Leak + SMS Messaging Interface Access
+\n
+\n
+\n
+### 2. Student Document Leak + SMS Messaging Interface Access
 
 - **Type:** IDOR / Broken Access Control
 - 
