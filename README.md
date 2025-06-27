@@ -10,7 +10,7 @@ Between May and June 2025, I discovered and responsibly disclosed **four differe
 
 This write-up summarizes each finding with redacted and anonymized technical details to preserve confidentiality and uphold ethical disclosure standards.
 
----
+
 ## 📅 Disclosure Timeline
 
 | # | Date       | Vulnerability                                 | Status         |
@@ -20,7 +20,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
 | 3 | May 31     | HR Report Access via Broken Access Control    | ✅ Fixed       |
 | 4 | June 14    | Direct URL Access to Student Docs (No Auth)   | ✅ Fixed       |
 
----
+
 
 ## 📂 Vulnerability Details
 
