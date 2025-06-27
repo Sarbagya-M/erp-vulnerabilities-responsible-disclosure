@@ -41,15 +41,13 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Restrict access to admin panels with strong role validation
   - Enforce authentication for all sensitive endpoints
 
-\n
-\n
-\n
+
 ### 2. Student Document Leak + SMS Messaging Interface Access
 
-- **Type:** IDOR / Broken Access Control
-- 
+- **Type:** Broken Access Control
+  
 - **Summary:** Lack of authorization checks allowed access to:  
-  - Uploaded student documents (e.g., admission files, certificates)  
+  - Uploaded student documents (e.g., admission files, certificates, citizenship)  
   - The ERP’s SMS messaging interface used for sending bulk messages, notices, and fee payment alerts to students
     
 - **Impact:**
@@ -62,6 +60,27 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Apply access control checks based on user roles and IDs  
   - Isolate document access by user/session context  
   - Restrict SMS interface access to authorized personnel only  
+
+### 3. HR Report Access via Broken Access Control
+- **Type:** Broken Access Control
+
+- **Summary:** An internal report viewing menu allowed access to sensitive HR reports without verifying the user's role or authentication level. The underlying API endpoint fetching the report data had no access control, making the data retrievable by any logged-in user.
+
+- Data Exposed:
+
+  - Full names and employment info
+
+  - Bank account details, SSF/CIT numbers, PAN numbers
+
+- Fix Recommendation:
+
+  - Implement access validation on all report exports
+
+  - Use session-bound or signed URLs with authorization middleware
+
+
+
+
 
 
 
