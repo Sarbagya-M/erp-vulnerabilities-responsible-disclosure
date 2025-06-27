@@ -108,7 +108,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
 
 This repository serves purely as an educational, redacted, and anonymized technical disclosure. No live URLs, identifiable organization names, or sensitive personal information have been shared. All vulnerabilities were discovered passively through legal means and disclosed responsibly.
 
-###Contact
+### Contact
 
 Got feedback or want to collaborate on projects? Feel free to connect:
 - [LinkedIn](https://www.linkedin.com/in/sarbagya-maharjan-68409222b/) 
