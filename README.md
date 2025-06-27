@@ -52,7 +52,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
   
 - **Summary:** Lack of authorization checks allowed access to:  
   - Uploaded student documents (e.g., admission files, certificates, citizenship)  
-  - The ERP’s SMS messaging interface used for sending bulk messages, notices, and fee payment alerts to students
+  - The ERP’s SMS messaging interface used for sending bulk messages, notices, and fee payment alerts to students along with the history of sent messages
     
 - **Impact:**
   
@@ -63,7 +63,11 @@ This write-up summarizes each finding with redacted and anonymized technical det
   
   - Apply access control checks based on user roles and IDs  
   - Isolate document access by user/session context  
-  - Restrict SMS interface access to authorized personnel only  
+  - Restrict SMS interface ac  cess to authorized personnel only
+
+ ![Super Admin Panel Access](screenshots/4.png)
+![Super Admin Panel Access](screenshots/5.png)
+  
 
 ### 3. HR Report Access via Broken Access Control
 - **Type:** Broken Access Control
@@ -73,16 +77,14 @@ This write-up summarizes each finding with redacted and anonymized technical det
 - Data Exposed:
 
   - Full names and employment info
-
   - Bank account details, SSF/CIT numbers, PAN numbers
 
 - Fix Recommendation:
 
   - Implement access validation on all report exports
-
   - Use session-bound or signed URLs with authorization middleware
 
-
+![Super Admin Panel Access](screenshots/6.png)
 
 
 
