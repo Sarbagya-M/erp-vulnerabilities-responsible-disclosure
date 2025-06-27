@@ -13,12 +13,12 @@ This write-up summarizes each finding with redacted and anonymized technical det
 
 ## 📅 Disclosure Timeline
 
-| # | Date       | Vulnerability                                 | Status         |
-|---|------------|-----------------------------------------------|----------------|
-| 1 | May 11     | Super Admin Access via Broken Access Control  | ✅ Fixed       |
-| 2 | May 29     | Student document access                       | ✅ Fixed       |
-| 3 | May 31     | HR Report Access via Broken Access Control    | ✅ Fixed       |
-| 4 | June 14    | Direct URL Access to Student Docs (No Auth)   | ✅ Fixed       |
+| # | Date       | Vulnerability                                 |
+|---|------------|-----------------------------------------------|
+| 1 | May 11     | Super Admin Access via Broken Access Control  |
+| 2 | May 29     | Student document access                       |
+| 3 | May 31     | HR Report Access via Broken Access Control    |
+| 4 | June 14    | Direct URL Access to Student Docs (No Auth)   |
 
 
 
@@ -85,6 +85,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Use session-bound or signed URLs with authorization middleware
 #### Screenshot (Redacted)
 ![Super Admin Panel Access](screenshots/6.png)
+
 
 
 
