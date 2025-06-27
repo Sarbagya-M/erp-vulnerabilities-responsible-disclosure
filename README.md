@@ -24,7 +24,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
 
 ## 📂 Vulnerability Details
 
-### 1⃣ Super Admin Access via Broken Access Control
+### 1. Super Admin Access via Broken Access Control
 
 - **Type:** Broken Access Control / Privilege Escalation
 
@@ -40,6 +40,26 @@ This write-up summarizes each finding with redacted and anonymized technical det
 
   - Restrict access to admin panels with strong role validation
   - Enforce authentication for all sensitive endpoints
+
+
+### 2⃣ Student Document Leak + SMS Messaging Interface Access
+
+- **Type:** IDOR / Broken Access Control
+- 
+- **Summary:** Lack of authorization checks allowed access to:  
+  - Uploaded student documents (e.g., admission files, certificates)  
+  - The ERP’s SMS messaging interface used for sending bulk messages, notices, and fee payment alerts to students
+    
+- **Impact:**
+  
+  - Exposure of personal and academic records  
+  - Potential misuse of the SMS system to send unauthorized messages
+    
+- **Fix Recommendation:**
+  
+  - Apply access control checks based on user roles and IDs  
+  - Isolate document access by user/session context  
+  - Restrict SMS interface access to authorized personnel only  
 
 
 
