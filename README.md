@@ -11,7 +11,7 @@ Between May and June 2025, I discovered and responsibly disclosed **four differe
 This write-up summarizes each finding with redacted and anonymized technical details to preserve confidentiality and uphold ethical disclosure standards.
 
 
-## 📅 Disclosure Timeline
+## Disclosure Timeline
 
 | # | Date       | Vulnerability                                 |
 |---|------------|-----------------------------------------------|
@@ -22,7 +22,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
 
 
 
-## 📂 Vulnerability Details
+## Vulnerability Details
 
 ### 1. Super Admin Access via Broken Access Control
 
@@ -52,7 +52,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
   
 - **Summary:** Lack of authorization checks allowed access to:  
   - Uploaded student documents (e.g., admission files, certificates, citizenship)  
-  - The ERP’s SMS messaging interface used for sending bulk messages, notices, and fee payment alerts to students along with the history of sent messages
+  - The ERP’s SMS messaging interface used for sending bulk messages, notices, and fee payment alerts to students along with the log of sent messages
     
 - **Impact:**
   
@@ -65,8 +65,8 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Isolate document access by user/session context  
   - Restrict SMS interface ac  cess to authorized personnel only
 #### Screenshot (Redacted)
- ![Super Admin Panel Access](screenshots/4.png)
-![Super Admin Panel Access](screenshots/5.png)
+ ![SMS portal](screenshots/4.png)
+![SMS log](screenshots/5.png)
   
 
 ### 3. HR Report Access via Broken Access Control
@@ -84,10 +84,25 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Implement access validation on all report exports
   - Use session-bound or signed URLs with authorization middleware
 #### Screenshot (Redacted)
-![Super Admin Panel Access](screenshots/6.png)
+![sensitive information](screenshots/6.png)
 
+### 4. Direct URL Access to Student Files (Bypass Patch)
 
+- Type: Insecure Direct File Access
 
+- Summary: Even after patching document access, files remained retrievable via predictable URLs. No session or login was required.
+
+- Impact:
+
+  - Anyone with or able to guess the URL could access private files
+
+- Fix Recommendation:
+
+  - Move files out of public directories
+  - Use signed, time-bound download tokens for access
+
+#### Screenshot (Redacted)
+![student document](screenshots/7.png)
 
 
 
