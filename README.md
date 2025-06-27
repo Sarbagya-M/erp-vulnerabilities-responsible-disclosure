@@ -42,7 +42,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Enforce authentication for all sensitive endpoints
 
 #### 🔎 Screenshot (Redacted)
-![Super Admin Panel Access](screenshots/1_superadmin_panel_redacted.png)
+![Super Admin Panel Access](screenshots/1.png)
 
 ### 2. Student Document Leak + SMS Messaging Interface Access
 
