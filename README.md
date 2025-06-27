@@ -10,7 +10,7 @@ Between May and June 2025, I discovered and responsibly disclosed **four differe
 
 This write-up summarizes each finding with redacted and anonymized technical details to preserve confidentiality and uphold ethical disclosure standards.
 
-
+---
 ## 📅 Disclosure Timeline
 
 | # | Date       | Vulnerability                                 | Status         |
