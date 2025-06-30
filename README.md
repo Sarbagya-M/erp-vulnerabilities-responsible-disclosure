@@ -72,7 +72,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
 ### 3. HR Report Access via Broken Access Control
 - **Type:** Broken Access Control
 
-- **Summary:** An internal report viewing menu allowed access to sensitive HR reports without verifying the user's role or authentication level. The underlying API endpoint fetching the report data had no access control, making the data retrievable by any logged-in user.
+- **Summary:** An internal report viewing interface allowed access to sensitive HR reports without verifying the user's role or privilege level. The backend report-fetching endpoint could be accessed directly and lacked proper access control, allowing any authenticated user to retrieve confidential employee data.
 
 - Data Exposed:
 
