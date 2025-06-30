@@ -63,7 +63,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
   
   - Apply access control checks based on user roles and IDs  
   - Isolate document access by user/session context  
-  - Restrict SMS interface ac  cess to authorized personnel only
+  - Restrict SMS interface access to authorized personnel only
 #### Screenshot (Redacted)
  ![SMS portal](screenshots/4.png)
 ![SMS log](screenshots/5.png)
