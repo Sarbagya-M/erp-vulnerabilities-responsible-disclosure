@@ -16,7 +16,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
 | # | Date       | Vulnerability                                 |
 |---|------------|-----------------------------------------------|
 | 1 | May 11     | Super Admin Access via Broken Access Control  |
-| 2 | May 29     | Student document access                       |
+| 2 | May 29     |Student Document Leak + SMS Messaging Interface Access                       |
 | 3 | May 31     | HR Report Access via Broken Access Control    |
 | 4 | June 14    | Direct URL Access to Student Docs (No Auth)   |
 
