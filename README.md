@@ -65,6 +65,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Isolate document access by user/session context  
   - Restrict SMS interface access to authorized personnel only
 #### Screenshot (Redacted)
+![student documents](screenshots/stddtl.png)
  ![SMS portal](screenshots/4.png)
 ![SMS log](screenshots/5.png)
   
