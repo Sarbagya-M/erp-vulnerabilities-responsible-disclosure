@@ -83,7 +83,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Restrict access to the messaging interface to authorized administrative roles only
   - Implement server-side access control checks before sending or viewing messages
  
-  - #### Screenshot (Redacted)
+ #### Screenshot (Redacted)
  ![SMS portal](screenshots/4.png)
 ![SMS log](screenshots/5.png)
 
