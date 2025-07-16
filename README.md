@@ -80,7 +80,6 @@ This write-up summarizes each finding with redacted and anonymized technical det
   - Exposure of metadata such as phone numbers and sent message logs
 
 - Fix Recommendation:
-
   - Restrict access to the messaging interface to authorized administrative roles only
   - Implement server-side access control checks before sending or viewing messages
  
