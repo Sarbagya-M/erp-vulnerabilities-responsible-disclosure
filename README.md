@@ -6,7 +6,7 @@ Cybersecurity Enthusiast
 
 ## Overview
 
-Between May and June 2025, I discovered and responsibly disclosed **four different vulnerabilities** in a college's ERP system, some of which exposed highly sensitive data of students and staff. All issues were reported have since been patched. These include broken access controls, document leaks, privilege escalation.
+Between May and June 2025, I discovered and responsibly disclosed **five different vulnerabilities** in a college's ERP system, some of which exposed highly sensitive data of students and staff. All issues were reported have since been patched. These include broken access controls, document leaks, privilege escalation.
 
 This write-up summarizes each finding with redacted and anonymized technical details to preserve confidentiality and uphold ethical disclosure standards.
 
@@ -16,9 +16,10 @@ This write-up summarizes each finding with redacted and anonymized technical det
 | # | Date       | Vulnerability                                 |
 |---|------------|-----------------------------------------------|
 | 1 | May 11     | Super Admin Access via Broken Access Control  |
-| 2 | May 29     |Student Document Leak + SMS Messaging Interface Access                       |
-| 3 | May 31     | HR Report Access via Broken Access Control    |
-| 4 | June 14    | Direct URL Access to Student Docs (No Auth)   |
+| 2 | May 29     |Student Document Leak|
+| 3 | May 29     |SMS Messaging Interface Access                       |
+| 4 | May 31     | HR Report Access via Broken Access Control    |
+| 5 | June 14    | Direct URL Access to Student Docs (No Auth)   |
 
 
 
@@ -46,31 +47,51 @@ This write-up summarizes each finding with redacted and anonymized technical det
 ![Super Admin Panel Access](screenshots/2.png)
 ![Super Admin Panel Access](screenshots/3.png)
 
-### 2. Student Document Leak + SMS Messaging Interface Access
-
+### 2. Student Document Leak
 - **Type:** Broken Access Control
   
-- **Summary:** Lack of authorization checks allowed access to:  
-  - Uploaded student documents (e.g., admission files, certificates, citizenship)  
-  - The ERP’s SMS messaging interface used for sending bulk messages, notices, and fee payment alerts to students along with the log of sent messages
+- **Summary:** Lack of authorization checks allowed access to uploaded student documents (e.g., admission files, certificates, citizenship)  
+ 
     
 - **Impact:**
   
   - Exposure of personal and academic records  
-  - Potential misuse of the SMS system to send unauthorized messages
+  - Violation of student data privacy and institutional data protection policies
     
 - **Fix Recommendation:**
   
-  - Apply access control checks based on user roles and IDs  
-  - Isolate document access by user/session context  
-  - Restrict SMS interface access to authorized personnel only
+  - Implement strict access control checks based on user roles and user IDs
+  - Enforce backend validation of user permissions before serving file resources
+
 #### Screenshot (Redacted)
 ![student documents](screenshots/stddtl.png)
+
+
+### 3. Unauthorized Access to SMS Messaging Interface
+
+- **Type:** Broken Access Control
+
+- **Summary:** The ERP's SMS messaging module did not enforce role-based access control, allowing unauthorized users to access the bulk messaging interface. This included features for sending announcements, fee reminders, and event alerts to students, along with the full log of previously sent messages.
+
+- **Impact:**
+
+  - Risk of misuse by sending fake or unauthorized messages to students
+  - Potential reputational damage and operational disruption
+  - Exposure of metadata such as phone numbers and sent message logs
+
+- Fix Recommendation:
+
+  - Restrict access to the messaging interface to authorized administrative roles only
+  - Implement server-side access control checks before sending or viewing messages
+ 
+  - #### Screenshot (Redacted)
  ![SMS portal](screenshots/4.png)
 ![SMS log](screenshots/5.png)
-  
 
-### 3. HR Report Access via Broken Access Control
+
+
+
+### 4. HR Report Access via Broken Access Control
 - **Type:** Broken Access Control
 
 - **Summary:** An internal report viewing interface allowed access to sensitive HR reports without verifying the user's role or privilege level. The backend report-fetching endpoint could be accessed directly and lacked proper access control, allowing any authenticated user to retrieve confidential employee data.
@@ -87,7 +108,7 @@ This write-up summarizes each finding with redacted and anonymized technical det
 #### Screenshot (Redacted)
 ![sensitive information](screenshots/6.png)
 
-### 4. Direct URL Access to Student Files (Bypass Patch)
+### 5. Direct URL Access to Student Files (Bypass Patch)
 
 - Type: Insecure Direct File Access
 
